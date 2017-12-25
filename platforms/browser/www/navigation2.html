@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> 
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/tutorialtemplate.css" />
+    <link rel="stylesheet" type="text/css" href="css/navigation2.css" />
+    <title>Navigation</title>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready">
+            <p class="event listening">Connecting to Device</p>
+            <div class="event received">
+                <div id="headbar">
+                    <div class="spacer"></div>
+                    <img src="img/home.png" id="home"/>Task 2: Scrolling
+                </div>
+                <div class="instructions" id="instructions1">
+                    Part 1: Three-finger scrolling
+                    <br/>
+                    To scroll through a vertical list, find a list item, then flick three fingers up or down. To scroll through a horizontal list, find a list item, then flick two fingers left or right.
+                </div>
+                <div class="instructions" id="instructions2" style="display:none">
+                    Part 2: Three-finger scrolling
+                    <br/>
+                    To navigate through multiple pages (like on the home screen), flick three fingers left or right. To move to the next page, flick three fingers right. To move to the previous page, flick three fingers left. Give it a try here.
+                </div>
+                <div class="instructions" id="instructions3" style="display:none"> 
+                    Part 3: Practice
+                    <br/>
+                    Scroll by flicking three fingers up or down.
+                </div>
+                <div class="actionblock" id="action1">
+                    <div>Item 1</div>
+                    <div>Item 2</div>
+                    <div>Item 3</div>
+                    <div>Item 4</div>
+                    <div>Item 5</div>
+                    <div>Item 6</div>
+                    <div>Item 7</div>
+                    <div>Item 8</div>
+                    <div>Item 9</div>
+                    <div>Item 10</div>
+                    <div>Item 11</div>
+                    <div>Item 12</div>
+                    <div>Item 13</div>
+                    <div>Item 14</div>
+                    <div>Item 15</div>
+                    <div>Item 16</div>
+                    <div>Item 17</div>
+                    <div>Item 18</div>
+                    <div>Item 19</div>
+                    <div>Item 20</div>
+                </div>
+                <div class="actionblock" id="action2" style="display:none">
+                    <div id="wrapper">
+                        <div class="pager"><div class="spacer3"></div>Page 1</div>
+                        <div class="pager"><div class="spacer3"></div>Page 2</div>
+                        <div class="pager"><div class="spacer3"></div>Page 3</div>
+                        <div class="pager"><div class="spacer3"></div>Page 4</div>
+                    </div>
+                </div>
+                <div id="menu">
+                    <a id="backpage"><div id="back">
+                        <div class="spacer2"></div>
+                        <img src="img/backarrow.png" id="backarrow"/>
+                        Back
+                    </div></a>
+                    <a id="nextpage"><div class="front"><div class="spacer2"></div>Next<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <a id="nextlesson" style="display:none"><div class="front"><div class="spacer2"></div>Next Lesson<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <div class="spacer2"></div>
+                    <span id="pageno">Page 1 of 2</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/navigation2.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

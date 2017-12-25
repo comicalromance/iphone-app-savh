@@ -1,0 +1,67 @@
+.instructions {
+    height:15%;
+}
+
+.actionblock {
+    height:67%;
+}
+
+.spacer3 {
+    height:50%;
+    margin-bottom:-48px;
+}
+
+.spacer4 {
+    height:10%;
+}
+
+#spacer5 {
+    height:2%;
+}
+
+#keypad {
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.row img {
+    width:18%;
+}
+
+.row img:first-child {
+    float:left;
+}
+
+.row img:last-child {
+    float:right;
+}
+
+.row img:nth-child(2) {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.row {
+    width:100%;
+}
+
+#call {
+    margin-left:auto;
+    margin-right:auto;
+    float:none;
+}
+
+#numbers {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    border:0;
+    padding:0;
+    background-color: transparent;
+    width:80%;
+    height:36px;
+    font-size: 36px;
+    text-align:center;
+}
+

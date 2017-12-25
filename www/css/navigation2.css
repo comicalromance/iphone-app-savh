@@ -1,0 +1,36 @@
+#action1 {
+    font-size:24px;
+    overflow-y:scroll;
+}
+
+#action2 {
+    font-size:48px;
+    overflow-x:scroll;
+}
+
+#action1 div {
+    padding:2%;
+    border-top:1px solid;
+    text-align:left;
+}
+
+.pager {
+	width:25%;
+    height:100%;
+    float:left;
+    display:inline-block;
+}
+
+#wrapper {
+    width:400%;
+    height:100%;
+}
+
+.spacer3 {
+    height:50%;
+    margin-bottom:-48px;
+}
+
+.spacer4 {
+    height:10%;
+}

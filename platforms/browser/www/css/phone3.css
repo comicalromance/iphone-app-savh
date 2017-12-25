@@ -1,0 +1,111 @@
+.spacer4 {
+    height:10%;
+}
+
+#action2 div {
+	font-size:24px;
+    padding:2%;
+    border-top:1px solid;
+    text-align:left;
+}
+
+#spacer5 {
+	height:2%;
+}
+
+#keypad {
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.row img {
+    width:15%;
+}
+.row img:first-child {
+    float:left;
+}
+
+.row img:last-child {
+    float:right;
+}
+
+.row img:nth-child(2) {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.row {
+    width:100%;
+}
+
+#call {
+    margin-left:auto;
+    margin-right:auto;
+    float:none;
+}
+
+#numbers {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    border:0;
+    padding:0;
+    background-color: transparent;
+    width:80%;
+    height:36px;
+    font-size: 36px;
+    text-align:center;
+}
+
+#action5 {
+	padding-left:2%;
+	padding-right:2%;
+}
+
+#topbar {
+	text-align:center;
+}
+
+#done {
+	float:right;
+}
+
+.nameinput {
+	border-top:0;
+    border-left:0;
+    border-right:0;
+    border-bottom:1px solid;
+    font-size:24px;
+	background:transparent;
+}
+
+#dropdown {
+	display:inline-block;
+	position:relative;
+}
+
+#dropbutton {
+	display:inline-block;
+	padding:10px;
+	width:100px;
+	text-align:center;
+}
+
+#dropdowncontent {
+	display:none;
+	position:absolute;
+	z-index:1;
+	border-top:0;
+	border-bottom:1px;
+	border-left:1px;
+	border-right:1px;
+	border-style:solid;
+}
+
+#dropdowncontent a {
+	display:block;
+	padding:10px;
+	text-align:center;
+
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> 
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/reviewtemplate.css" />
+    <title>Tutorial</title>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready">
+            <p class="event listening">Connecting to Device</p>
+            <div class="event received">
+                <div id="headbar">
+                    <div class="spacer"></div>
+                    <img src="img/home.png" id="home"/>Reviews
+                </div>
+                <div id="main">
+                	<div id="titlebar">
+                    	<img id="logo" src="img/magic.png"></img>
+                    	<div class="spacer2"></div>
+                    	<h1>MAGic Screen Magnifier</h1>
+                  		<br/>
+                  		<h3>Windows Screen Magnifier - 11 Nov 2017</h3>
+                    </div>
+                    <div id="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rutrum, lacus ac condimentum maximus, dolor ligula dignissim nulla, non fermentum erat urna at tellus. Sed ac arcu vitae ex aliquam imperdiet ut nec est. Nulla facilisi. Phasellus hendrerit tortor nec eros elementum interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt nisl at eros tincidunt lobortis. Curabitur vel pharetra massa, ac luctus est. Mauris at dictum tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt vestibulum metus, non finibus tellus posuere non. Vivamus a velit viverra, eleifend mi in, porta tellus. Morbi accumsan, orci non placerat hendrerit, ligula arcu convallis elit, vel bibendum tellus urna ut arcu. Suspendisse in tellus enim. Nunc in ex id quam fringilla mattis nec posuere nisi. Donec aliquet aliquet porta. Pellentesque suscipit elementum venenatis.
+                    <br/>
+                    <br/>
+					Cras at nibh pretium, iaculis dolor consectetur, iaculis elit. Sed ultrices nibh eros, sit amet semper tortor euismod in. Proin iaculis ornare erat, ac elementum eros egestas eu. Sed at neque ante. Vivamus vitae velit finibus, lacinia lorem ac, gravida ligula. Etiam euismod aliquam iaculis. 
+
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/reviewtemplate.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular-webfont.woff');
+    src: url('fonts/Roboto-Regular-webfont.woff') format('woff');    
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-attachment:fixed;
+    font-family: 'Roboto', sans-serif;
+    font-size:24px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+#deviceready {
+    height:100%;
+}
+
+.app {
+    position:absolute;
+    height:100%;                   /* text area height */
+    width:100%;                   /* text area width */
+    text-align:center;
+    padding:0;     /* image height is 200px (bottom 20px are overlapped with text) */
+}
+
+#headbar {
+    height:7%;
+    background-color:#451463;
+    text-align:center;
+    color:#FFFFFF;
+    font-size:24px;
+}
+
+.instructions {
+    display:block;
+    height:22%;
+    padding:2%;
+    background-color:#35464d;
+    text-align:justify;
+    color:#b7c3c7;
+    font-size:20px;
+    overflow-y: auto;
+}
+
+.actionblock {
+    height:60%;
+}
+
+#menu {
+    height:7%;
+    text-align:center;
+    background-color:#dedede;
+}
+
+#back {
+    height:100%;
+    float:left;
+    padding-left:2%;
+}
+
+.front {
+    height:100%;
+    float:right;
+    padding-right:2%;
+}
+
+#backarrow {
+    float:left;
+    margin-top:5px;
+    height:24px;
+}
+
+#home {
+    float:left;
+    margin-left:2%;
+    margin-top:5px;
+    height:24px;
+}
+
+#frontarrow {
+    float:right;
+    margin-top:5px;
+    height:24px;
+}
+
+.spacer {
+    height:40%;
+    margin-bottom:-12px;
+}
+
+.spacer2 {
+    height:50%;
+    margin-bottom:-12px;
+}
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:600px) {
+    .app {
+        width:600px;
+        left:50%;
+        margin:0 -300px;
+    }
+
+}
+@media screen and (min-aspect-ratio: 1/1) and (min-width:800px) {
+    .app {
+        width:800px;
+        left:50%;
+        margin:0 -400px;
+    }
+}
+
+.event.listening {
+    background-color:#333333;
+    display:none;
+    margin:0px 30px;
+    
+}
+
+.event.received {
+    display:block;
+    height:100%;
+}

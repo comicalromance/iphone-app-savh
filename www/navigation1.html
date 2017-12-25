@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> 
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/tutorialtemplate.css" />
+    <link rel="stylesheet" type="text/css" href="css/navigation1.css" />
+
+    <title>Navigation</title>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready">
+            <p class="event listening">Connecting to Device</p>
+            <div class="event received">
+                <div id="headbar">
+                    <div class="spacer"></div>
+                    <img src="img/home.png" id="home"/>Task 1: Basic Navigation
+                </div>
+                <div class="instructions" id="instructions1">
+                    Part 1: Explore by touch
+                    <br/>
+                    When enabled, Explore by touch lets you hear what's under your finger. Move your finger over the items in the center of your screen. After you have explored five items, the lesson will continue.
+                </div>
+                <div class="instructions" id="instructions2" style="display:none">
+                    Part 2: Double-tap to activate
+                    <br/>
+                    To activate the last item you heard, double-tap anywhere. Find Item 4 and activate it now. After that, activate Next to continue.
+                </div>
+                <div class="instructions" id="instructions3" style="display:none">
+                    Part 3: Navigating Lessons
+                    <br/>
+                    Tutorial lessons are arranged as follows. The top area has the lesson, which you can explore and read at any time. It also has a Tutorial Home button in the top left corner. The middle has a practice area. The bottom has a progress indicator, and lesson navigation buttons. Activate Next now to continue.
+                </div>
+                <div class="instructions" id="instructions4" style="display:none">
+                    Part 4: Swipe to explore
+                    <br/>
+                    You can also expore by swiping the screen with your finger. Swiping left generally explores up and to the left, while swiping right explores down and to the right. This is usually done when you do not know exactly where something is on the screen. Try it now.
+                </div>
+                <div class="instructions" id="instructions5" style="display:none">
+                    Part 5: Practice
+                    <br/>
+                    To hear what's under your finger, move it across the screen. Double-tap anywhere to activate what you hear. Swipe left or right to explore.
+                </div>
+                <div class="actionblock" id="action1">
+                    <div class="spacer4"></div>
+                    <table>
+                        <tr>
+                            <th>Item 1</th>
+                            <th>Item 2</th>
+                            <th>Item 3</th>
+                            <th>Item 4</th>
+                        </tr>
+                        <tr>
+                            <th>Item 5</th>
+                            <th>Item 6</th>
+                            <th>Item 7</th>
+                            <th>Item 8</th>
+                        </tr>
+                        <tr>
+                            <th>Item 9</th>
+                            <th>Item 10</th>
+                            <th>Item 11</th>
+                            <th>Item 12</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="actionblock" id="action2" style="display:none">
+                    <div class="spacer3"></div>
+                    ACTION AREA
+                </div>
+                <div id="menu">
+                    <a id="backpage"><div id="back">
+                        <div class="spacer2"></div>
+                        <img src="img/backarrow.png" id="backarrow"/>
+                        Back
+                    </div></a>
+                    <a id="nextpage"><div class="front"><div class="spacer2"></div>Next<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <a id="nextlesson" style="display:none"><div class="front"><div class="spacer2"></div>Next Lesson<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <div class="spacer2"></div>
+                    <span id="pageno">Page 1 of 4</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/navigation1.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

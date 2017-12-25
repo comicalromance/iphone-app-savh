@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> 
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/tutorialtemplate.css" />
+    <link rel="stylesheet" type="text/css" href="css/phone2.css" />
+    <title>Phone</title>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready">
+            <p class="event listening">Connecting to Device</p>
+            <div class="event received">
+                <div id="headbar">
+                    <div class="spacer"></div>
+                    <img src="img/home.png" id="home"/>Task 2: The Keypad
+                </div>
+                <div class="instructions" id="instructions1">
+                    Part 1: Navigating to the Keypad
+                    <br/>
+                    To access the Keypad, place your finger on the home button, then move the finger up and a bit to the right to find the keypad. Once you hear "Keypad", tap the screen twice.
+                </div>
+                <div class="instructions" id="instructions2" style="display:none">
+                    Part 2: Using the Keypad
+                    <br/>
+                    The keypad consists of a grid of numbers from 0 to 9 similar to a house phone with physical keys. This will be used to dial the numbers you want to call. There is a mock keypad similar to the actual iPhone keypad prepared below. Feel free to explore the keypad!
+                </div>
+                <div class="instructions" id="instructions3" style="display:none"> 
+                    Part 3: Dialling a Number
+                    <br/>
+                    Tapping a number will prompt VoiceOver to select that number and read it out. Tapping the screen twice afterwards will key in the number. The number dialled will be displayed in a text area on top of the keypad.
+                </div>
+                <div class="instructions" id="instructions4" style="display:none"> 
+                    Part 4: Deleting a Number
+                    <br/>
+                    If you dialled a wrong number, you can delete it by tapping on the delete button located above number 3 on the keypad, then tapping the screen twice. Note that the delete button will only appear if there is a number, and that it will only delete from the last digit you dialled. In the actual iPhone keypad, double tapping and holding the delete button will delete everything.
+                </div>
+                <div class="instructions" id="instructions5" style="display:none"> 
+                    Part 5: Making the Call
+                    <br/>
+                    First, check if you dialled the correct number by tapping on the text area above the keypad, and then moving through the numbers by sliding your finger. If the number dialled is correct, tap the call button located below number 0 on the keypad, then tap the screen twice.
+                </div>
+                <div class="actionblock" id="action1">
+                    <div class="spacer3"></div>
+                    <img src="img/keypadimg.png" id="keypadimg"/>
+                </div>
+                <div class="actionblock" id="action2" style="display:none">
+                    <div id="spacer5"></div>
+                    <div id="keypad">
+                        <div><img src="img/addcontact.png" id="addcontact" alt="add contact"/><input id="numbers" type="text" readonly="true" value=""/><img src="img/delete.png" id="delete" alt="delete"/></div>
+                        <div id="keyable">
+                            <div class="row">
+                                <img src="img/1.png" id="1" alt="1"/>
+                                <img src="img/2.png" id="2" alt="2"/>
+                                <img src="img/3.png" id="3" alt="3"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/4.png" id="4" alt="4"/>
+                                <img src="img/5.png" id="5" alt="5"/>
+                                <img src="img/6.png" id="6" alt="6"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/7.png" id="7" alt="7"/>
+                                <img src="img/8.png" id="8" alt="8"/>
+                                <img src="img/9.png" id="9" alt="9"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/asterix.png" id="*" alt="*"/>
+                                <img src="img/0.png" id="0" alt="0"/>
+                                <img src="img/pound.png" id="#" alt="#"/>
+                            </div>
+                        </div>
+                        <div class="row"><img src="img/call.png" id="call" alt="Call button"></div>
+                    </div>
+                </div>
+                <div id="menu">
+                    <a id="backpage"><div id="back">
+                        <div class="spacer2"></div>
+                        <img src="img/backarrow.png" id="backarrow"/>
+                        Back
+                    </div></a>
+                    <a id="nextpage"><div class="front"><div class="spacer2"></div>Next<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <a id="nextlesson" style="display:none"><div class="front"><div class="spacer2"></div>Next Lesson<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <div class="spacer2"></div>
+                    <span id="pageno">Page 1 of 5</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/phone2.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

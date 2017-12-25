@@ -1,0 +1,34 @@
+#action2 {
+    font-size:48px;
+}
+
+#homescreen {
+    width:90%;
+}
+
+table {
+    font-size:24px;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+tr, th {
+    border:1px solid;
+}
+
+th {
+    width:15%;
+    padding-top: 7.5%;
+    padding-bottom:7.5%;
+}
+
+
+.spacer3 {
+    height:50%;
+    margin-bottom:-75px;
+}
+
+.spacer4 {
+    height:10%;
+}

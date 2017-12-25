@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> 
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com  
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/tutorialtemplate.css" />
+    <link rel="stylesheet" type="text/css" href="css/phone3.css" />
+    <title>Navigation</title>
+</head>
+
+<body>
+    <div class="app">
+        <div id="deviceready">
+            <p class="event listening">Connecting to Device</p>
+            <div class="event received">
+                <div id="headbar">
+                    <div class="spacer"></div>
+                    <img src="img/home.png" id="home"/>Task 3: Contacts
+                </div>
+                <div class="instructions" id="instructions1">
+                    Part 1: Navigating to Contacts
+                    <br/>
+                    The Contact Page on the Phone application contains a list of all the contacts saved on your phone. To access the Contacts page, place your finger on the home button, then move the finger straight up. Once you hear "Keypad", tap the screen twice.
+                </div> 
+                <div class="instructions" id="instructions2" style="display:none">
+                    Part 2: The Contacts Page 
+                    <br/>
+                    Displayed on the Contacts Page is a list of all contacts by name. Clicking on a contact will prompt VoiceOver to read out his details.
+                </div>
+                <div class="instructions" id="instructions3" style="display:none">
+                    Part 3: Adding Contacts via Keypad (I)
+                    <br/>
+                    One way of adding contacts is via the Keypad on the Phone Application. First, key in the phone number of the contact you wish to add. Then, touch the "Add Contacts" button located above number one on the keypad. Try finding the "Add Contacts" button below!
+                </div>
+                <div class="instructions" id="instructions4" style="display:none">
+                    Part 4: Adding Contacts via Keypad (II)
+                    <br/>
+                    Once you hear "Add Contacts", tap the screen twice. You will be asked whether you want to create a new contact or add to existing contacts. Select "create a new contact" and double tap the screen if you wish to add a new contact. This will redirect you to a new page.
+                </div>
+                <div class="instructions" id="instructions5" style="display:none">
+                    Part 5: Adding Contacts via Keypad (III)
+                    <br/>
+                    On the new page, the focus will automatically be shifted to the First Name textbox. It may be convenient to fill in the contacts' entire name into to avoid complications. Flicking left and right will direct you to other textboxes. Note that while flicking, VoiceOver will say "Is Editing" if the box you flicked to is the one you are currently typing in.
+                </div>
+                <div class="instructions" id="instructions6" style="display:none">
+                    Part 6: Adding Contacts via Keypad (IV)
+                    <br/>
+                    To type content in other boxes, touch or flick those boxes and double tap the screen, which will open the keyboard. Flicking further down will lead you to the Number section. The number dialled on the Keypad previously will be automatically saved as a Home Number by default. If this is incorrect, tap to the left of the number, then double tap. A list of labels will then appear. Flick to the appropriate label (like Mobile Number) and then double tap to change the label.
+                </div>
+                <div class="instructions" id="instructions7" style="display:none">
+                    Part 7: Adding Contacts via Keypad (V)
+                    <br/>
+                    Once you have finished keying in particulars, find the “Done” button on the top right corner of the screen, or by flicking right until VoiceOver reads "Done". Then, double tap the screen to save the particulars.
+                </div>
+                <div class="actionblock" id="action1">
+                    <div class="spacer4"></div>
+                    <img src="img/contactsimg.png" id="contactsimg"/>
+                </div>
+                <div class="actionblock" id="action2" style="display:none"> 
+                    <div>Adam</div>
+                    <div>Bobby</div>
+                    <div>Caroline</div>
+                    <div>Daniel</div>
+                    <div>Freddy</div>
+                    <div>Zack</div>
+                </div>
+                <div class="actionblock" id="action3" style="display:none">
+                    <div id="spacer5"></div>
+                    <div id="keypad">
+                        <div><img src="img/addcontact.png" id="addcontact" alt="add contact"/><input id="numbers" type="text" readonly="true" value=""/><img src="img/delete.png" id="delete" alt="delete"/></div>
+                        <div id="keyable">
+                            <div class="row">
+                                <img src="img/1.png" id="1" alt="1"/>
+                                <img src="img/2.png" id="2" alt="2"/>
+                                <img src="img/3.png" id="3" alt="3"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/4.png" id="4" alt="4"/>
+                                <img src="img/5.png" id="5" alt="5"/>
+                                <img src="img/6.png" id="6" alt="6"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/7.png" id="7" alt="7"/>
+                                <img src="img/8.png" id="8" alt="8"/>
+                                <img src="img/9.png" id="9" alt="9"/>
+                            </div>
+                            <div class="row">
+                                <img src="img/asterix.png" id="*" alt="*"/>
+                                <img src="img/0.png" id="0" alt="0"/>
+                                <img src="img/pound.png" id="#" alt="#"/>
+                            </div>
+                        </div>
+                        <div class="row"><img src="img/call.png"/ id="call" alt="Call button"></div>
+                    </div>
+                </div>
+                <div class="actionblock" id="action4" style="display:none">
+                </div>
+                <div class="actionblock" id="action5" style="display:none">
+                    <div id="spacer5"></div>
+                    <div id="topbar">New Contact<a id="done"> Done </a></div>
+                    <div id="spacer5"></div>
+                    First Name: <input type="text" placeholder="First Name" class="nameinput"/>
+                    <br/>
+                    <br/>
+                    Last Name: <input type="text" placeholder="Last Name" class="nameinput"/>
+                    <br/>
+                    <br/>
+                    <div id="dropdown">
+                        <a id="dropbutton">home</a>
+                        <div id="dropdowncontent">
+                            <a>mobile</a>
+                            <a>work</a>
+                        </div>
+                    </div>
+                    | Phone Number: <input type="text" value="98765432" class="nameinput"/> 
+                </div>
+                <div id="menu">
+                    <a id="backpage"><div id="back">
+                        <div class="spacer2"></div>
+                        <img src="img/backarrow.png" id="backarrow"/>
+                        Back
+                    </div></a>
+                    <a id="nextpage"><div class="front"><div class="spacer2"></div>Next<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <a id="nextlesson" style="display:none"><div class="front"><div class="spacer2"></div>Tutorial Home<img src="img/frontarrow.png" id="frontarrow"/></div></a>
+                    <div class="spacer2"></div>
+                    <span id="pageno">Page 1 of 7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/phone3.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
